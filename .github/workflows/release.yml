@@ -68,7 +68,7 @@ jobs:
     needs: build
     if: startsWith(github.ref, 'refs/tags/')
     environment:
-      name: testypyi
+      name: testpypi
     permissions:
       id-token: write
 
