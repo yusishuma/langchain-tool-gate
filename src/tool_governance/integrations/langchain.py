@@ -1,10 +1,15 @@
 from typing import Any, Optional, List
-from langchain.agents import AgentExecutor
-from langchain.agents import create_openai_tools_agent
 from langchain_core.language_models import BaseLLM
 from langchain_core.prompts import ChatPromptTemplate
 from langchain.tools import BaseTool
 from tool_governance.core.guard import apply_guardrails as _apply_guardrails
+
+try:
+    from langchain.agents import AgentExecutor
+    from langchain.agents import create_openai_tools_agent
+except ImportError:
+    from langchain.agents.agent_executor import AgentExecutor
+    from langchain.agents.openai_tools import create_openai_tools_agent
 
 
 def apply_guardrails(
