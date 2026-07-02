@@ -68,7 +68,7 @@ jobs:
     needs: build
     if: startsWith(github.ref, 'refs/tags/')
     environment:
-      name: testpypi
+      name: toolgatepypi
     permissions:
       id-token: write
 
@@ -82,4 +82,4 @@ jobs:
     - name: Publish to Test PyPI
       uses: pypa/gh-action-pypi-publish@release/v1
       with:
-        repository-url: https://test.pypi.org/legacy/
+        repository-url: https://upload.pypi.org/legacy/
