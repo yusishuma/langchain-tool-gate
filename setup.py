@@ -23,6 +23,13 @@ setup(
         "python-dotenv",
         "prometheus-client",
     ],
+    extras_require={
+        "dev": [
+            "pytest",
+            "build",
+            "twine",
+        ],
+    },
     entry_points={
         "console_scripts": [
             "tool-gov=tool_governance.cli.main:cli",
